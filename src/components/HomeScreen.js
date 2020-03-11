@@ -7,7 +7,7 @@ import {
 function HomeScreen(props) {
     return (
         <View>
-            <Text>Login</Text>
+            <Text> 😰You are logged in so time to cry</Text>
         </View>
     )
 }

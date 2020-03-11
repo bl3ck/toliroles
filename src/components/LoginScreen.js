@@ -12,6 +12,7 @@ ActivityIndicator,
 } from 'react-native'
 
 import { post } from '../utils/http'
+import { Actions } from 'react-native-router-flux';
 
 function LoginScreen(props) {
     const [name, setName] = useState("")
@@ -31,9 +32,10 @@ function LoginScreen(props) {
             // make request
             post('login', body)
             .then((data) => {
-                // it was succesful save user tokens to local storage and go away.
+                // it was succesful save user tokens to local storage and go away to the home page.
                 setProcessing(false)
                 console.warn(data)
+                Actions.home()
             })
             .catch(e => {
                 setProcessing(false)
